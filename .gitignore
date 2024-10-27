@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/
+TeachMeSkills_C32_HW_Lesson_8.iml
 
 ### Eclipse ###
 .apt_generated
