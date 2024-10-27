@@ -1,7 +1,6 @@
 package com.teachmeskills.lesson_8.model.account;
 
 import static com.teachmeskills.lesson_8.utils.Constants.ACCOUNT_LIMIT;
-import static com.teachmeskills.lesson_8.utils.Constants.MASTERCARD_LIMIT;
 
 public class Account {
 
