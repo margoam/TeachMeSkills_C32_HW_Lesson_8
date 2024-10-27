@@ -42,8 +42,8 @@ public class ApplicationRunner {
         VisaCardTransferService accountTransfer = new VisaCardTransferService();
 
         BaseCard[] client1Cards = {
-                new MasterCard("123123123123123", 234, new Date(), "Test1 User", "EUR", "PLN"),
-                new VisaCard("23423423423423", 456, new Date(), "Test1 User", "EUR", 12)
+                new MasterCard("123123123123123", 234, new Date(2030, 10, 12), "Test1 User", "EUR", "PLN"),
+                new VisaCard("23423423423423", 456, new Date(2030, 10, 12), "Test1 User", "EUR", 12)
         };
 
         BaseCard[] client2Cards = {
