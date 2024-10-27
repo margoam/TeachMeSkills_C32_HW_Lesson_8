@@ -5,8 +5,8 @@ import com.teachmeskills.lesson_8.document_parser.impl.*;
 
 public class ParserFabric {
 
-    public static IParser createParser(String fileName){
-        if(fileName.endsWith(".docx")){
+    public static IParser createParser(String fileName) {
+        if (fileName.endsWith(".docx")) {
             // TODO избавиться от return null и сделать возврат docx парсера
             return new DocxDocumentParser();
         } else if (fileName.endsWith(".pdf")) {

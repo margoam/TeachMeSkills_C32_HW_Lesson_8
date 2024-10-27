@@ -12,8 +12,7 @@ public class VisaCardTransferService implements CardTransferService {
 
     @Override
     public Check transferFromCardToCard(BaseCard cardFromTransfer, BaseCard cardToTransfer, double transferSum) {
-        if (cardFromTransfer.checkCardLimitTransfer(transferSum))
-        {
+        if (cardFromTransfer.checkCardLimitTransfer(transferSum)) {
             return new Check(transferSum, new Date(), cardFromTransfer.cardNumber);
         }
         return null;
@@ -21,8 +20,7 @@ public class VisaCardTransferService implements CardTransferService {
 
     @Override
     public Check transferFromAccountToAccount(Account accountFromTransfer, Account accountToTransfer, double transferSum) {
-        if (accountFromTransfer.checkAccountLimitTransfer(transferSum))
-        {
+        if (accountFromTransfer.checkAccountLimitTransfer(transferSum)) {
             return new Check(transferSum, new Date(), accountFromTransfer.accountNumber);
         }
         return null;

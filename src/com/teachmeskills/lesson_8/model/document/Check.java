@@ -16,7 +16,7 @@ public class Check {
         this.cardNumber = cardNumber;
     }
 
-    public void showCheckInfo(){
+    public void showCheckInfo() {
         System.out.println("Transfer sum is: " + transferSum + "\nTransfer date is: " +
                 transferDate + "\nCard/Account number is: " + cardNumber);
     }
