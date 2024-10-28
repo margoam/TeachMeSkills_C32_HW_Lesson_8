@@ -59,7 +59,7 @@ public class ApplicationRunner {
         Check check1 = cardTransfer.transferFromCardToCard(client1.cards[0], client2.cards[1], 3466);
         check1.showCheckInfo();
 
-        Check check2 = accountTransfer.transferFromAccountToAccount(client1.accounts[1], client2.accounts[0], 3245);
+        Check check2 = accountTransfer.transferFromAccountToAccount(client1.accounts[1], client2.accounts[0], 42342345);
         check2.showCheckInfo();
     }
 }

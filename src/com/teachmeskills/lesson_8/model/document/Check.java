@@ -9,20 +9,29 @@ public class Check {
     double transferSum;
     Date transferDate;
     String cardNumber;
+    private final boolean isSuccessful;
+    String message;
 
 
-    public Check(double transferSum, Date transferDate, String cardNumber) {
+    public Check(double transferSum, Date transferDate, String cardNumber, boolean isSuccessful) {
         this.transferSum = transferSum;
         this.transferDate = transferDate;
         this.cardNumber = cardNumber;
+        this.isSuccessful = isSuccessful;
     }
 
-    public Check() {
-        System.out.println("Check is unsuccessful");
+    public Check(boolean isSuccessful, String message) {
+        this.isSuccessful = isSuccessful;
+        this.message = message;
     }
 
     public void showCheckInfo() {
-        System.out.println("Transfer sum is: " + transferSum + "\nTransfer date is: " +
-                transferDate + "\nCard/Account number is: " + cardNumber);
+        if (isSuccessful) {
+            System.out.println("Transfer sum is: " + transferSum + "\nTransfer date is: " +
+                    transferDate + "\nCard/Account number is: " + cardNumber);
+        }
+        else {
+            System.out.println(message);
+        }
     }
 }
