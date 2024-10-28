@@ -9,11 +9,18 @@ public class Check {
     double transferSum;
     Date transferDate;
     String cardNumber;
+    String infoMessage;
+
+
 
     public Check(double transferSum, Date transferDate, String cardNumber) {
         this.transferSum = transferSum;
         this.transferDate = transferDate;
         this.cardNumber = cardNumber;
+    }
+
+    public  Check(){
+        System.out.println("Check is unsuccessful");
     }
 
     public void showCheckInfo() {

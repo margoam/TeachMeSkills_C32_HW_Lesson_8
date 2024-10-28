@@ -15,7 +15,7 @@ public class VisaCardTransferService implements CardTransferService {
         if (cardFromTransfer.checkCardLimitTransfer(transferSum)) {
             return new Check(transferSum, new Date(), cardFromTransfer.cardNumber);
         }
-        return null;
+        return new Check();
     }
 
     @Override
@@ -23,6 +23,6 @@ public class VisaCardTransferService implements CardTransferService {
         if (accountFromTransfer.checkAccountLimitTransfer(transferSum)) {
             return new Check(transferSum, new Date(), accountFromTransfer.accountNumber);
         }
-        return null;
+        return new Check();
     }
 }
