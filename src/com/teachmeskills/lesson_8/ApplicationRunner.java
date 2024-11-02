@@ -12,7 +12,7 @@ import com.teachmeskills.lesson_8.model.document.Check;
 import com.teachmeskills.lesson_8.transfer.impl.MasterCardTransferService;
 import com.teachmeskills.lesson_8.transfer.impl.VisaCardTransferService;
 
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -44,13 +44,13 @@ public class ApplicationRunner {
         VisaCardTransferService accountTransfer = new VisaCardTransferService();
 
         BaseCard[] client1Cards = {
-                new MasterCard("123123123123123", 234, new Date(2030, 10, 12), "Test1 User", "EUR", "PLN"),
-                new VisaCard("23423423423423", 456, new Date(2030, 10, 12), "Test1 User", "EUR", 12)
+                new MasterCard("123123123123123", 234, new Date(2030, 10, 12), "Test1 User", "EUR", "PLN", 23245),
+                new VisaCard("23423423423423", 456, new Date(2030, 10, 12), "Test1 User", "EUR", 12,2345)
         };
 
         BaseCard[] client2Cards = {
-                new MasterCard("2342342342", 444, new Date(2028, 10, 15), "Corporation", "USD", "USA"),
-                new VisaCard("34534534534", 333, new Date(2028, 8, 17), "Corporation", "USD", 3)
+                new MasterCard("2342342342", 444, new Date(2028, 10, 15), "Corporation", "USD", "USA",44456),
+                new VisaCard("34534534534", 333, new Date(2028, 8, 17), "Corporation", "USD", 3,334)
         };
 
         IndividualClient client1 = new IndividualClient(client1Accounts, "Rita A", client1Cards, "MC123456");
@@ -61,5 +61,6 @@ public class ApplicationRunner {
 
         Check check2 = accountTransfer.transferFromAccountToAccount(client1.accounts[1], client2.accounts[0], 42342345);
         check2.showCheckInfo();
+
     }
 }

@@ -5,7 +5,7 @@ import static com.teachmeskills.lesson_8.utils.Constants.ACCOUNT_LIMIT;
 public class Account {
 
     public String accountNumber;
-    double amount;
+    public double amount;
 
     public Account(String accountNumber, double amount) {
         this.accountNumber = accountNumber;

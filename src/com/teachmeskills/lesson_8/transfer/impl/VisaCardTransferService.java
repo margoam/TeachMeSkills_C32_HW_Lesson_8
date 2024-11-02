@@ -12,17 +12,25 @@ public class VisaCardTransferService implements CardTransferService {
 
     @Override
     public Check transferFromCardToCard(BaseCard cardFromTransfer, BaseCard cardToTransfer, double transferSum) {
-        if (cardFromTransfer.checkCardLimitTransfer(transferSum)) {
-            return new Check(transferSum, new Date(), cardFromTransfer.cardNumber, true);
+        if (cardFromTransfer.checkCardLimitTransfer(transferSum) && transferSum > 0 && transferSum <= cardFromTransfer.amount) {
+            cardFromTransfer.amount -= transferSum;
+            cardToTransfer.amount += transferSum;
+            return new Check(transferSum, new Date(), cardFromTransfer.cardNumber,
+                    "Transfer was completed successfully");
         }
-        return new Check(false, "The check is unsuccessful");
+        return new Check(transferSum, new Date(), cardFromTransfer.cardNumber,
+                "Transfer was completed unsuccessfully");
     }
 
     @Override
     public Check transferFromAccountToAccount(Account accountFromTransfer, Account accountToTransfer, double transferSum) {
-        if (accountFromTransfer.checkAccountLimitTransfer(transferSum)) {
-            return new Check(transferSum, new Date(), accountFromTransfer.accountNumber, true);
+        if (accountFromTransfer.checkAccountLimitTransfer(transferSum) && transferSum > 0 && transferSum <= accountFromTransfer.amount) {
+            accountFromTransfer.amount -= transferSum;
+            accountToTransfer.amount += transferSum;
+            return new Check(transferSum, new Date(), accountFromTransfer.accountNumber,
+                    "Transfer was completed successfully");
         }
-        return new Check(false, "The check is unsuccessful");
+        return new Check(transferSum, new Date(), accountFromTransfer.accountNumber,
+                "Transfer was completed unsuccessfully");
     }
 }
